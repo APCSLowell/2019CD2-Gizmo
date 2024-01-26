@@ -13,35 +13,40 @@ public class Tester {
 
    @Test
    public void partA () {
-      LightBoard test = new LightBoard(500,650);
-      int rows = test.getLights().length;
-      int cols = test.getLights()[0].length;
-      assertEquals(500,rows);
-      assertEquals(650,cols);
-      double count = 0;
-      for(int r = 0; r < rows;r++)
-        for(int c = 0; c < cols; c++)
-          if(test.getLights()[r][c])
-            count++;
-      assertEquals(0.4,count/(rows*cols),0.2);
+    opm.add(new Gizmo("ABC",true));
+    opm.add(new Gizmo("ABC",false));
+    opm.add(new Gizmo("XYZ",true));
+    opm.add(new Gizmo("lmnop",false));
+    opm.add(new Gizmo("ABC",true));
+    opm.add(new Gizmo("ABC",false));
+    int abc = opm.countElectronicsByMaker("ABC")
+    assertEquals(partAFail(2,abc,"ABC"),2,abc);
+      
+    int lmnop = opm.countElectronicsByMaker("lmnop");
+    assertEquals(partAFail(0,lmnop,"lmnop"),0,lmnop);
+
+    int xyz = opm.countElectronicsByMaker("XYZ")
+    assertEquals(partAFail(1,xyz,"XYZ"),1,xyz);
+
+   int qrp = opm.countElectronicsByMaker("QRP")
+    assertEquals(partAFail(0,qrp,"QRP"),0,qrp);
    }
 
    @Test
    public void partB(){
-      LightBoard test = new LightBoard(7,5);
-      String[] stars = {"**.**", "*..*.", "*..**", "*...*", "*...*", "**.**", "....."};
-      boolean[][] newLights = test.getLights();
-      for (int r = 0; r < stars.length; r++)
-         for (int c = 0; c < stars[0].length(); c++)
-           newLights[r][c] = stars[r].charAt(c) == '*';
-      assertEquals(partBFail(false,0,3), false,test.evaluateLight(0, 3));
-      assertEquals(partBFail(true,6,0),true,test.evaluateLight(6, 0));
-      assertEquals(partBFail(false,4,1),false,test.evaluateLight(4, 1));
-      assertEquals(partBFail(true,5,4),true,test.evaluateLight(5, 4));
+         opm.add(new Gizmo("ABC",true));
+        opm.add(new Gizmo("ABC",false));
+       opm.add(new Gizmo("XYZ",true));
+       opm.add(new Gizmo("lmnop",false));
+       opm.add(new Gizmo("ABC",true));
+       opm.add(new Gizmo("ABC",false));
+       assertEquals(false,opm.hasAdjacentEqualPair());
+       opm.add(new Gizmo("ABC",false));
+       assertEquals(true,opm.hasAdjacentEqualPair());
    }
 
-   private String partBFail(boolean expected, int num1, int num2){
-      return "Expected " + expected + " with evaluateLight(" + num1 + "," + num2 + "), but output was " + !expected;
+   private String partAFail(int expected, int real, String maker){
+      return "Expected " + expected + " with countElectronicsByMaker(\"" + maker + "\"), but output was " + real;
    }
 
 
