@@ -1,21 +1,23 @@
-# 2019  AP Computer Science A FRQ #4 LightBoard
-Instructions:  https://apstudents.collegeboard.org/ap/pdf/ap19-frq-computer-science-a.pdf 
+# 2019  AP Computer Science A FRQ #2 Gizmo
+ 
 
-Quick Reference Guide:  https://apstudents.collegeboard.org/ap/pdf/ap-computer-science-a-java-quick-reference.pdf 
+Both the Instructions on pages 202-204, Quick reference guide on page 209 are available at this link **https://apcentral.collegeboard.org/pdf/ap-computer-science-a-course-and-exam-description.pdf?course=ap-computer-science-a** 
 
-The correct answer outputs should have a pattern of 7 rows and 5 columns of stars and dots **_similar_** to that shown and should match the last line exactly.   
+Correct solution and scoring guidelines are available at this link:
+
+**https://apcentral.collegeboard.org/pdf/ap-computer-science-a-2019-ced-scoring-guidelines.pdf?course=ap-computer-science-a** 
+
+The correct answer outputs should be as follows. 
+
+ 
 
  
 
 ```
-**.*.
-***..
-.**..
-****.
-**...
-.....
-....*
-
-
-false true false true
+2
+0
+1
+0
+false
+true
 ```
