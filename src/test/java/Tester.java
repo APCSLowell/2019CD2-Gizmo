@@ -13,6 +13,7 @@ public class Tester {
 
    @Test
    public void partA () {
+    OnlinePurchaseManager opm = new OnlinePurchaseManager();
     opm.add(new Gizmo("ABC",true));
     opm.add(new Gizmo("ABC",false));
     opm.add(new Gizmo("XYZ",true));
@@ -20,22 +21,23 @@ public class Tester {
     opm.add(new Gizmo("ABC",true));
     opm.add(new Gizmo("ABC",false));
     int abc = opm.countElectronicsByMaker("ABC");
-    assertEquals(partAFail(2,abc,"ABC"),2,abc);
+    assertEquals(2,abc,partAFail(2,abc,"ABC"));
       
     int lmnop = opm.countElectronicsByMaker("lmnop");
-    assertEquals(partAFail(0,lmnop,"lmnop"),0,lmnop);
+    assertEquals(0,lmnop,partAFail(0,lmnop,"lmnop"));
 
     int xyz = opm.countElectronicsByMaker("XYZ");
-    assertEquals(partAFail(1,xyz,"XYZ"),1,xyz);
+    assertEquals(1,xyz,partAFail(1,xyz,"XYZ"));
 
    int qrp = opm.countElectronicsByMaker("QRP");
-    assertEquals(partAFail(0,qrp,"QRP"),0,qrp);
+    assertEquals(0,qrp,partAFail(0,qrp,"QRP"));
    }
 
    @Test
    public void partB(){
-         opm.add(new Gizmo("ABC",true));
-        opm.add(new Gizmo("ABC",false));
+       OnlinePurchaseManager opm = new OnlinePurchaseManager();
+       opm.add(new Gizmo("ABC",true));
+       opm.add(new Gizmo("ABC",false));
        opm.add(new Gizmo("XYZ",true));
        opm.add(new Gizmo("lmnop",false));
        opm.add(new Gizmo("ABC",true));
